@@ -157,28 +157,7 @@ exports.getItem = async (req, res,next) => {
         res.status(500).json({message: error.message})
     }
 };
-    
-exports.AddArrayCart = async (req, res) => {
-    try{
-        //const data = Role.find();
-        const data = await Cart.findOneAndUpdate({
-            name: req.currentUser.username,
-        }, 
-        {
-          $push: {
-            items: { id:3,name:"lname",desc:"surname" }
-          }
-        }, { new: true });
-        if (!data) {
-            throw new HttpException(404, 'item not found');
-        }
-        console.log("[PUT] add a new item in the cart")
-        res.send(data);
-    }
-    catch(error){
-        res.status(500).json({message: error.message})
-    }
-};
+ 
 exports.RemoveArrayCart = async (req, res) => {
     try{
         //const data = Role.find();
