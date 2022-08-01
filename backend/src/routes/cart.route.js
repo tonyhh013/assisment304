@@ -13,7 +13,6 @@ const cu = require("../utils/upload");
 router.get('/get',auth(), awaitHandlerFactory(cartController.getItem));
 
 router.put('/updateCartQTY',auth(), awaitHandlerFactory(cartController.updateCartQTY));
-router.put('/AddArrayCart',auth(), awaitHandlerFactory(cartController.AddArrayCart));
 router.put('/RemoveArrayCart',auth(), awaitHandlerFactory(cartController.RemoveArrayCart));
 
 router.post('/createCart',auth(), awaitHandlerFactory(cartController.createCart));
